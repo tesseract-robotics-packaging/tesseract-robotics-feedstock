@@ -1,0 +1,45 @@
+package:
+  name: tesseract-robotics
+  version: 0.8.3
+
+source:
+  - git_url: https://github.com/tesseract-robotics/tesseract.git
+    git_rev: 0.8.3
+    patches:
+      - tesseract_disable_examples.patch # [win]
+
+build:
+  number: 0
+
+outputs:
+  - name: tesseract-robotics-common
+    script: build-common.sh # [unix]
+    script: bld-common.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - llvm-openmp
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - llvm-openmp
+        - tinyxml2
+        - yaml-cpp
+
+about:
+  home: https://github.com/tesseract-robotics/tesseract
+  summary: Motion Planning Environment
