@@ -13,8 +13,8 @@ build:
 
 outputs:
   - name: tesseract-robotics-common
-    script: build-common.sh # [unix]
-    script: bld-common.bat # [win]
+    script: build_common.sh # [unix]
+    script: bld_common.bat # [win]
     requirements:
       build:
         - {{ compiler('c') }}
