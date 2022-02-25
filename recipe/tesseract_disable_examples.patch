@@ -11,6 +11,28 @@ index cba176b37f..1b908ccd96 100644
  endif()
  
  configure_package(NAMESPACE tesseract)
+diff --git a/tesseract_common/cmake/tesseract_macros.cmake b/tesseract_common/cmake/tesseract_macros.cmake
+index e346e0e5e7..2d9c673447 100644
+--- a/tesseract_common/cmake/tesseract_macros.cmake
++++ b/tesseract_common/cmake/tesseract_macros.cmake
+@@ -79,7 +79,7 @@ macro(tesseract_variables)
+           -Wsign-conversion)
+       message(WARNING "Non-GNU compiler detected. If using AVX instructions, Eigen alignment issues may result.")
+     elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+-      set(TESSERACT_COMPILE_DEFINITIONS "_USE_MATH_DEFINES=ON")
++      set(TESSERACT_COMPILE_DEFINITIONS "_USE_MATH_DEFINES=ON" "_ENABLE_EXTENDED_ALIGNED_STORAGE=1")
+       message(WARNING "Non-GNU compiler detected. If using AVX instructions, Eigen alignment issues may result.")
+     else()
+       message(WARNING "${CMAKE_CXX_COMPILER_ID} Unsupported compiler detected.")
+@@ -116,7 +116,7 @@ macro(tesseract_variables)
+           -Werror=sign-conversion)
+       message(WARNING "Non-GNU compiler detected. If using AVX instructions, Eigen alignment issues may result.")
+     elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+-      set(TESSERACT_COMPILE_DEFINITIONS "_USE_MATH_DEFINES=ON")
++      set(TESSERACT_COMPILE_DEFINITIONS "_USE_MATH_DEFINES=ON" "_ENABLE_EXTENDED_ALIGNED_STORAGE=1")
+       message(WARNING "Non-GNU compiler detected. If using AVX instructions, Eigen alignment issues may result.")
+     else()
+       message(WARNING "${CMAKE_CXX_COMPILER_ID} Unsupported compiler detected.")
 diff --git a/tesseract_geometry/CMakeLists.txt b/tesseract_geometry/CMakeLists.txt
 index e77ef5a917..efd55cf918 100644
 --- a/tesseract_geometry/CMakeLists.txt

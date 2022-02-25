@@ -7,9 +7,9 @@ cmake -GNinja ^
   -DBUILD_SHARED_LIBS=ON ^
   -DUSE_MSVC_RUNTIME_LIBRARY_DLL=ON ^
   -S tesseract_common ^
-  -B build_dir
+  -B build_common_dir
 if %errorlevel% neq 0 exit /b %errorlevel%
-cmake --build build_dir --config Release -j 4
+cmake --build build_common_dir --config Release -j 4
 if %errorlevel% neq 0 exit /b %errorlevel%
-cmake --build build_dir --config Release --target install
+cmake --build build_common_dir --config Release --target install
 if %errorlevel% neq 0 exit /b %errorlevel%

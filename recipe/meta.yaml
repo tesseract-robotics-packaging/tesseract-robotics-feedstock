@@ -28,7 +28,6 @@ outputs:
         - eigen
         - console_bridge
         - boost
-        - llvm-openmp
         - lcov # [linux]
         - tinyxml2
         - yaml-cpp
@@ -36,10 +35,206 @@ outputs:
         - eigen
         - console_bridge
         - boost
-        - llvm-openmp
         - tinyxml2
         - yaml-cpp
-
+  - name: tesseract-robotics-geometry
+    script: build_geometry.sh # [unix]
+    script: bld_geometry.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+        - assimp
+        - octomap
+        - pkg-config
+        - tesseract-robotics-common
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - assimp
+        - octomap
+        - tesseract-robotics-common
+  - name: tesseract-robotics-scene-graph
+    script: build_scene.sh # [unix]
+    script: bld_scene.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - pkg-config
+        - tesseract-robotics-common
+        - tesseract-robotics-geometry
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - tesseract-robotics-common
+        - tesseract-robotics-geometry
+  - name: tesseract-robotics-srdf
+    script: build_srdf.sh # [unix]
+    script: bld_srdf.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - pkg-config
+        - yaml-cpp
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-geometry
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - tesseract-robotics-common
+        - tesseract-robotics-scene-graph
+  - name: tesseract-robotics-state-solver
+    script: build_state_solver.sh # [unix]
+    script: bld_state_solver.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - pkg-config
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-geometry
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - tesseract-robotics-common
+        - tesseract-robotics-scene-graph
+  - name: tesseract-robotics-kinematics
+    script: build_kinematics.sh # [unix]
+    script: bld_kinematics.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - opw-kinematics
+        - pkg-config
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-geometry
+        - tesseract-robotics-state-solver
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - opw-kinematics
+        - tesseract-robotics-common
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-state-solver
+  - name: tesseract-robotics-support
+    script: build_support.sh # [unix]
+    script: bld_support.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - opw-kinematics
+        - pkg-config
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-geometry
+        - tesseract-robotics-state-solver
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - orocos-kdl
+        - opw-kinematics
+        - tesseract-robotics-common
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-state-solver
 about:
   home: https://github.com/tesseract-robotics/tesseract
   summary: Motion Planning Environment
