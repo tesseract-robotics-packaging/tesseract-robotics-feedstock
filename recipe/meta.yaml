@@ -235,6 +235,150 @@ outputs:
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
         - tesseract-robotics-state-solver
+  - name: tesseract-robotics-collision
+    script: build_collision.sh # [unix]
+    script: bld_collision.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+        - pkg-config
+        - llvm-openmp
+        - bullet-cpp
+        - fcl
+        - tesseract-robotics-common
+        - tesseract-robotics-geometry
+        - tesseract-robotics-support
+        - tesseract-robotics-scene-graph
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - llvm-openmp
+        - bullet-cpp
+        - fcl
+        - tesseract-robotics-common
+        - tesseract-robotics-geometry
+        - tesseract-robotics-support
+        - tesseract-robotics-scene-graph
+  - name: tesseract-robotics-urdf
+    script: build_urdf.sh # [unix]
+    script: bld_urdf.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - lcov # [linux]
+        - tinyxml2
+        - yaml-cpp
+        - pkg-config
+        - pcl
+        - tesseract-robotics-common
+        - tesseract-robotics-geometry
+        - tesseract-robotics-collision
+        - tesseract-robotics-scene-graph
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tinyxml2
+        - yaml-cpp
+        - pcl
+        - tesseract-robotics-common
+        - tesseract-robotics-geometry
+        - tesseract-robotics-collision
+        - tesseract-robotics-scene-graph
+  - name: tesseract-robotics-environment
+    script: build_environment.sh # [unix]
+    script: bld_environment.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - pkg-config
+        - tesseract-robotics-collision
+        - tesseract-robotics-geometry
+        - tesseract-robotics-kinematics
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-state-solver
+        - tesseract-robotics-common
+        - tesseract-robotics-urdf
+        - tesseract-robotics-srdf
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tesseract-robotics-collision
+        - tesseract-robotics-geometry
+        - tesseract-robotics-kinematics
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-state-solver
+        - tesseract-robotics-common
+        - tesseract-robotics-urdf
+        - tesseract-robotics-srdf
+  - name: tesseract-robotics-visualization
+    script: build_visualization.sh # [unix]
+    script: bld_visualization.bat # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - gtest
+        - gmock
+        - cmake
+        - ninja # [win]
+        - make # [linux]
+        - ros-industrial-cmake-boilerplate
+        - eigen
+        - console_bridge
+        - boost
+        - pkg-config
+        - tesseract-robotics-collision
+        - tesseract-robotics-common
+        - tesseract-robotics-environment
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-state-solver
+      run:
+        - eigen
+        - console_bridge
+        - boost
+        - tesseract-robotics-collision
+        - tesseract-robotics-common
+        - tesseract-robotics-environment
+        - tesseract-robotics-scene-graph
+        - tesseract-robotics-state-solver
 about:
   home: https://github.com/tesseract-robotics/tesseract
   summary: Motion Planning Environment
