@@ -6,7 +6,7 @@ source:
   - git_url: https://github.com/tesseract-robotics/tesseract.git
     git_rev: 0.8.3
     patches:
-      - tesseract_disable_examples.patch # [win]
+      - tesseract_disable_examples.patch
 
 build:
   number: 0
