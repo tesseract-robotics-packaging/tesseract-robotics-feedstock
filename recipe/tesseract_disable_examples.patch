@@ -73,7 +73,7 @@ index 809b73ae30..decc78475e 100644
  if(TESSERACT_ENABLE_TESTING)
    enable_testing()
 diff --git a/tesseract_urdf/CMakeLists.txt b/tesseract_urdf/CMakeLists.txt
-index d23e68e1d4..b2afe0f3bb 100644
+index d23e68e1d4..3ec7c8164a 100644
 --- a/tesseract_urdf/CMakeLists.txt
 +++ b/tesseract_urdf/CMakeLists.txt
 @@ -12,7 +12,7 @@ endif()
@@ -85,6 +85,15 @@ index d23e68e1d4..b2afe0f3bb 100644
  find_package(tesseract_geometry REQUIRED)
  find_package(tesseract_common REQUIRED)
  find_package(tesseract_scene_graph REQUIRED)
+@@ -101,7 +101,7 @@ else(TESSERACT_Boost_VERSION_MACRO ${Boost_VERSION_MACRO})
+   set(TESSERACT_Boost_VERSION_MACRO ${Boost_VERSION})
+ endif()
+ if(TESSERACT_Boost_VERSION_MACRO VERSION_GREATER "106000")
+-  target_link_libraries(${PROJECT_NAME} PUBLIC ${PCL_LIBRARIES})
++  target_link_libraries(${PROJECT_NAME} PUBLIC ${PCL_IO_LIBRARIES} ${PCL_COMMON_LIBRARIES})
+   target_compile_definitions(${PROJECT_NAME} PUBLIC TESSERACT_PARSE_POINT_CLOUDS="ON")
+   foreach(DEF ${PCL_DEFINITIONS})
+     string(STRIP ${DEF} DEF)
 @@ -128,7 +128,7 @@ if(TESSERACT_Boost_VERSION_MACRO VERSION_GREATER "106000")
        endif()
      endif()

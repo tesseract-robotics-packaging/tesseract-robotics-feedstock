@@ -255,7 +255,6 @@ outputs:
         - tinyxml2
         - yaml-cpp
         - pkg-config
-        - llvm-openmp
         - bullet-cpp
         - fcl
         - tesseract-robotics-common
@@ -268,7 +267,6 @@ outputs:
         - boost
         - tinyxml2
         - yaml-cpp
-        - llvm-openmp
         - bullet-cpp
         - fcl
         - tesseract-robotics-common
@@ -296,10 +294,16 @@ outputs:
         - yaml-cpp
         - pkg-config
         - pcl
+        - vtk
         - tesseract-robotics-common
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
         - tesseract-robotics-scene-graph
+      host:
+        - libglu                         # [linux]
+        - xorg-libx11                    # [linux]
+        - xorg-libxext                   # [linux]
+        - mesalib                        # [linux]
       run:
         - eigen
         - console_bridge
@@ -307,6 +311,7 @@ outputs:
         - tinyxml2
         - yaml-cpp
         - pcl
+        - vtk
         - tesseract-robotics-common
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
