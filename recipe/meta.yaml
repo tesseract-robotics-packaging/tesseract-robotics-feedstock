@@ -377,6 +377,8 @@ outputs:
         - ros-industrial-cmake-boilerplate
         - pkg-config
         - lcov # [linux]
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
+        - {{ cdt('mesa-dri-drivers') }}  # [linux]
       host:
         - eigen
         - console_bridge
@@ -385,8 +387,6 @@ outputs:
         - yaml-cpp
         - pcl
         - vtk
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
         - tesseract-robotics-common
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
