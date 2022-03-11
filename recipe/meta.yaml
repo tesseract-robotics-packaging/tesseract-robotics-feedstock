@@ -360,7 +360,7 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\lib\tesseract_collision_core.lib (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_core.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_bullet.dll (exit 1)  # [win]
-        - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_kdl.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_fcl.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_collision\tesseract_collision-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-urdf
     script: build_urdf.sh # [unix]
@@ -389,10 +389,6 @@ outputs:
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
         - tesseract-robotics-scene-graph
-        - libglu                         # [linux]
-        - xorg-libx11                    # [linux]
-        - xorg-libxext                   # [linux]
-        - mesalib                        # [linux]
       run:
         - eigen
         - console_bridge
