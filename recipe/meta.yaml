@@ -42,6 +42,15 @@ outputs:
         - boost-cpp
         - tinyxml2
         - yaml-cpp
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_common/macros.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_common.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_common/tesseract_common-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_common\macros.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_common.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_common.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_common\tesseract_common-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-geometry
     script: build_geometry.sh # [unix]
     script: bld_geometry.bat # [win]
@@ -75,6 +84,12 @@ outputs:
         - assimp
         - octomap
         - tesseract-robotics-common
+    test:
+        commands:
+          - test -f ${PREFIX}/include/tesseract_geometry/geometry.h  # [unix]
+          - test -f ${PREFIX}/lib/cmake/tesseract_geometry/tesseract_geometry-config.cmake # [unix]
+          - if not exist %LIBRARY_PREFIX%\include\tesseract_geometry\geometry.h (exit 1)  # [win]
+          - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_geometry\tesseract_geometry-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-scene-graph
     script: build_scene.sh # [unix]
     script: bld_scene.bat # [win]
@@ -108,6 +123,15 @@ outputs:
         - orocos-kdl
         - tesseract-robotics-common
         - tesseract-robotics-geometry
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_scene_graph/graph.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_scene_graph.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_scene_graph/tesseract_scene_graph-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_scene_graph\graph.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_scene_graph.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_scene_graph.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_scene_graph\tesseract_scene_graph-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-srdf
     script: build_srdf.sh # [unix]
     script: bld_srdf.bat # [win]
@@ -139,6 +163,15 @@ outputs:
         - yaml-cpp
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_srdf/srdf_model.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_srdf.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_srdf/tesseract_srdf-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_srdf\srdf_model.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_srdf.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_srdf.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_srdf\tesseract_srdf-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-state-solver
     script: build_state_solver.sh # [unix]
     script: bld_state_solver.bat # [win]
@@ -172,6 +205,16 @@ outputs:
         - orocos-kdl
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_state_solver/state_solver.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_state_solver_kdl.so  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_state_solver_ofkt.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_state_solver/tesseract_state_solver-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_state_solver\state_solver.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_state_solver_kdl.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_state_solver_ofkt.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_state_solver\tesseract_state_solver-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-kinematics
     script: build_kinematics.sh # [unix]
     script: bld_kinematics.bat # [win]
@@ -209,6 +252,21 @@ outputs:
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
         - tesseract-robotics-state-solver
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_kinematics/core/forward_kinematics.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_kinematics_core.so  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_kinematics_kdl.so  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_kinematics_ur.so  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_kinematics_opw.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_kinematics/tesseract_kinematics-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_kinematics\core\forward_kinematics.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_kinematics_core.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_kinematics_core.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_kinematics_opw.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_kinematics_kdl.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_kinematics_ur.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_kinematics\tesseract_kinematics-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-support
     script: build_support.sh # [unix]
     script: bld_support.bat # [win]
@@ -246,6 +304,12 @@ outputs:
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
         - tesseract-robotics-state-solver
+    test:
+      commands:
+        - test -f ${PREFIX}/share/tesseract_support/urdf/abb_irb2400.srdf  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_support/tesseract_support-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\share\tesseract_support\urdf\abb_irb2400.srdf (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_support\tesseract_support-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-collision
     script: build_collision.sh # [unix]
     script: bld_collision.bat # [win]
@@ -285,6 +349,19 @@ outputs:
         - tesseract-robotics-geometry
         - tesseract-robotics-support
         - tesseract-robotics-scene-graph
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_collision/core/common.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_collision_core.so  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_collision_bullet.so  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_collision_fcl.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_collision/tesseract_collision-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_collision\core\common.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_collision_core.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_core.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_bullet.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_kdl.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_collision\tesseract_collision-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-urdf
     script: build_urdf.sh # [unix]
     script: bld_urdf.bat # [win]
@@ -328,6 +405,15 @@ outputs:
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
         - tesseract-robotics-scene-graph
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_urdf/urdf_parser.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_urdf.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_urdf/tesseract_urdf-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_urdf\urdf_parser.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_urdf.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_urdf.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_urdf\tesseract_urdf-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-environment
     script: build_environment.sh # [unix]
     script: bld_environment.bat # [win]
@@ -366,6 +452,15 @@ outputs:
         - tesseract-robotics-common
         - tesseract-robotics-urdf
         - tesseract-robotics-srdf
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_environment/environment.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_environment.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_environment/tesseract_environment-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_environment\environment.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_environment.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_environment.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_environment\tesseract_environment-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-visualization
     script: build_visualization.sh # [unix]
     script: bld_visualization.bat # [win]
@@ -398,6 +493,15 @@ outputs:
         - tesseract-robotics-environment
         - tesseract-robotics-scene-graph
         - tesseract-robotics-state-solver
+    test:
+      commands:
+        - test -f ${PREFIX}/include/tesseract_visualization/visualization.h  # [unix]
+        - test -f ${PREFIX}/lib/libtesseract_visualization.so  # [unix]
+        - test -f ${PREFIX}/lib/cmake/tesseract_visualization/tesseract_visualization-config.cmake # [unix]
+        - if not exist %LIBRARY_PREFIX%\include\tesseract_visualization\visualization.h (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\tesseract_visualization.lib (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\tesseract_visualization.dll (exit 1)  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_visualization\tesseract_visualization-config.cmake (exit 1)  # [win]
 about:
   home: https://github.com/tesseract-robotics/tesseract
   summary: Motion Planning Environment
