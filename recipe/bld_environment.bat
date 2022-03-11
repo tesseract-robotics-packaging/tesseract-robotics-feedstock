@@ -6,7 +6,7 @@ cmake -GNinja ^
   -DCMAKE_BUILD_TYPE:STRING=Release ^
   -DBUILD_SHARED_LIBS=ON ^
   -DUSE_MSVC_RUNTIME_LIBRARY_DLL=ON ^
-  -S tesseract_environment ^
+  -S src\tesseract_environment ^
   -B build_environment_dir
 if %errorlevel% neq 0 exit /b %errorlevel%
 cmake --build build_environment_dir --config Release -j 4

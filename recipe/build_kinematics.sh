@@ -7,7 +7,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX \
   -DCMAKE_BUILD_TYPE:STRING=Release \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DBUILD_SHARED_LIBS=ON \
-  -S tesseract_kinematics \
+  -S src/tesseract_kinematics \
   -B build_kinematics_dir
 
 cmake --build build_kinematics_dir --config Release -- -j$CPU_COUNT

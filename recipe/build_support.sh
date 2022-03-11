@@ -7,7 +7,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX \
   -DCMAKE_BUILD_TYPE:STRING=Release \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DBUILD_SHARED_LIBS=ON \
-  -S tesseract_support \
+  -S src/tesseract_support \
   -B build_support_dir
 
 cmake --build build_support_dir --config Release -- -j$CPU_COUNT
