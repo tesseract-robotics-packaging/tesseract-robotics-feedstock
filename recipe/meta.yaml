@@ -385,6 +385,8 @@ outputs:
         - yaml-cpp
         - pcl
         - vtk
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
+        - {{ cdt('mesa-dri-drivers') }}  # [linux]
         - tesseract-robotics-common
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
