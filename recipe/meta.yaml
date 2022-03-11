@@ -29,16 +29,17 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - lcov # [linux]
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
   - name: tesseract-robotics-geometry
@@ -53,21 +54,22 @@ outputs:
         - cmake
         - ninja # [win]
         - make # [linux]
+        - lcov # [linux]
+        - pkg-config
         - ros-industrial-cmake-boilerplate
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - assimp
         - octomap
-        - pkg-config
         - tesseract-robotics-common
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - assimp
@@ -86,20 +88,21 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - pkg-config
+        - lcov # [linux]
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
-        - pkg-config
         - tesseract-robotics-common
         - tesseract-robotics-geometry
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
@@ -118,19 +121,20 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - lcov # [linux]
+      host:
+        - pkg-config
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
-        - pkg-config
         - yaml-cpp
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - tesseract-robotics-common
@@ -148,20 +152,21 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - lcov # [linux]
+        - pkg-config
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
-        - pkg-config
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
@@ -180,22 +185,23 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - lcov # [linux]
+        - pkg-config
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
         - opw-kinematics
-        - pkg-config
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
         - tesseract-robotics-state-solver
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
@@ -216,22 +222,23 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - lcov # [linux]
+        - pkg-config
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
         - opw-kinematics
-        - pkg-config
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
         - tesseract-robotics-state-solver
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
@@ -252,13 +259,14 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - lcov # [linux]
+        - pkg-config
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
-        - pkg-config
         - bullet-cpp
         - fcl
         - tesseract-robotics-common
@@ -268,7 +276,7 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - bullet-cpp
@@ -290,20 +298,20 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - pkg-config
+        - lcov # [linux]
+      host:
         - eigen
         - console_bridge
-        - boost
-        - lcov # [linux]
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
-        - pkg-config
         - pcl
         - vtk
         - tesseract-robotics-common
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
         - tesseract-robotics-scene-graph
-      host:
         - libglu                         # [linux]
         - xorg-libx11                    # [linux]
         - xorg-libxext                   # [linux]
@@ -311,7 +319,7 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - pcl
@@ -333,10 +341,11 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - pkg-config
+      host:
         - eigen
         - console_bridge
-        - boost
-        - pkg-config
+        - boost-cpp
         - tesseract-robotics-collision
         - tesseract-robotics-geometry
         - tesseract-robotics-kinematics
@@ -348,7 +357,7 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tesseract-robotics-collision
         - tesseract-robotics-geometry
         - tesseract-robotics-kinematics
@@ -370,10 +379,11 @@ outputs:
         - ninja # [win]
         - make # [linux]
         - ros-industrial-cmake-boilerplate
+        - pkg-config
+      host:
         - eigen
         - console_bridge
-        - boost
-        - pkg-config
+        - boost-cpp
         - tesseract-robotics-collision
         - tesseract-robotics-common
         - tesseract-robotics-environment
@@ -382,7 +392,7 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost
+        - boost-cpp
         - tesseract-robotics-collision
         - tesseract-robotics-common
         - tesseract-robotics-environment
