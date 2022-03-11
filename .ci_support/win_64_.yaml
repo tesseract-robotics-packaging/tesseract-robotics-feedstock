@@ -1,4 +1,6 @@
-boost:
+assimp:
+- '5.2'
+boost_cpp:
 - 1.74.0
 c_compiler:
 - vs2017
@@ -9,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - vs2017
 pin_run_as_build:
-  boost:
+  boost-cpp:
     max_pin: x.x.x
 target_platform:
 - win-64

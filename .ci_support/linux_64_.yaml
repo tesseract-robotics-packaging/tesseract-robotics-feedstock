@@ -1,4 +1,6 @@
-boost:
+assimp:
+- '5.2'
+boost_cpp:
 - 1.74.0
 c_compiler:
 - gcc
@@ -17,7 +19,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 pin_run_as_build:
-  boost:
+  boost-cpp:
     max_pin: x.x.x
 target_platform:
 - linux-64
