@@ -13,11 +13,7 @@ cxx_compiler:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  vtk:
-    max_pin: x.x.x
 target_platform:
 - win-64
 tinyxml2:
 - '9'
-vtk:
-- 9.0.1
