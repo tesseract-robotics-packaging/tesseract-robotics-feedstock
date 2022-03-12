@@ -9,7 +9,7 @@ cmake -GNinja ^
   -S src\tesseract_kinematics  ^
   -B build_kinematics_dir
 if %errorlevel% neq 0 exit /b %errorlevel%
-cmake --build build_kinematics_dir --config Release -j 4
+cmake --build build_kinematics_dir --config Release 
 if %errorlevel% neq 0 exit /b %errorlevel%
 cmake --build build_kinematics_dir --config Release --target install
 if %errorlevel% neq 0 exit /b %errorlevel%

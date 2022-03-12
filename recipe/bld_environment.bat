@@ -9,7 +9,7 @@ cmake -GNinja ^
   -S src\tesseract_environment ^
   -B build_environment_dir
 if %errorlevel% neq 0 exit /b %errorlevel%
-cmake --build build_environment_dir --config Release -j 4
+cmake --build build_environment_dir --config Release 
 if %errorlevel% neq 0 exit /b %errorlevel%
 cmake --build build_environment_dir --config Release --target install
 if %errorlevel% neq 0 exit /b %errorlevel%

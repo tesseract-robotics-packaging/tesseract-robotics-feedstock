@@ -9,7 +9,7 @@ cmake -GNinja ^
   -S src\tesseract_srdf ^
   -B build_srdf_dir
 if %errorlevel% neq 0 exit /b %errorlevel%
-cmake --build build_srdf_dir --config Release -j 4
+cmake --build build_srdf_dir --config Release 
 if %errorlevel% neq 0 exit /b %errorlevel%
 cmake --build build_srdf_dir --config Release --target install
 if %errorlevel% neq 0 exit /b %errorlevel%

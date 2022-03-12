@@ -9,7 +9,7 @@ cmake -GNinja ^
   -S src\tesseract_scene_graph ^
   -B build_scene_graph_dir
 if %errorlevel% neq 0 exit /b %errorlevel%
-cmake --build build_scene_graph_dir --config Release -j 4
+cmake --build build_scene_graph_dir --config Release 
 if %errorlevel% neq 0 exit /b %errorlevel%
 cmake --build build_scene_graph_dir --config Release --target install
 if %errorlevel% neq 0 exit /b %errorlevel%
