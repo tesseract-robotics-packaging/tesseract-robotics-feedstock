@@ -426,6 +426,8 @@ outputs:
         - make # [linux]
         - ros-industrial-cmake-boilerplate
         - pkg-config
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
+        - {{ cdt('mesa-dri-drivers') }}  # [linux]
       host:
         - eigen
         - console_bridge
@@ -473,6 +475,8 @@ outputs:
         - make # [linux]
         - ros-industrial-cmake-boilerplate
         - pkg-config
+        - {{ cdt('mesa-libgl-devel') }}  # [linux]
+        - {{ cdt('mesa-dri-drivers') }}  # [linux]
       host:
         - eigen
         - console_bridge
