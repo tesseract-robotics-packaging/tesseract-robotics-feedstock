@@ -3,13 +3,13 @@ assimp:
 boost_cpp:
 - 1.74.0
 c_compiler:
-- vs2017
+- vs2019
 channel_sources:
 - tesseract-robotics,conda-forge,defaults
 channel_targets:
 - tesseract-robotics main
 cxx_compiler:
-- vs2017
+- vs2019
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
