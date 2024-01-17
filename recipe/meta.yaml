@@ -20,7 +20,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_common
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -60,7 +60,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_geometry
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -106,7 +106,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_scene_graph
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -153,7 +153,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_srdf
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -198,7 +198,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_state_solver
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -246,7 +246,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_kinematics
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -303,7 +303,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_support
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -347,7 +347,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_collision
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -404,7 +404,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_urdf
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -457,7 +457,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_environment
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -511,7 +511,7 @@ outputs:
         - SUBPKG_BUILD_DIR=build/tesseract_visualization
     script: build_pkg.sh # [unix]
     script: bld_pkg.bat # [win]
-    version: {{ tesseract_version }}
+    version: {{ version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -552,7 +552,7 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\lib\tesseract_visualization.lib (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_visualization.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_visualization\tesseract_visualization-config.cmake (exit 1)  # [win]
-        
+
 about:
   home: https://github.com/tesseract-robotics/tesseract
   summary: Motion Planning Environment
