@@ -1,18 +1,21 @@
 assimp:
-- '5.2'
-boost_cpp:
-- 1.74.0
+- 5.3.1
+bullet_cpp:
+- '3.25'
 c_compiler:
 - vs2019
 channel_sources:
 - tesseract-robotics,conda-forge,defaults
 channel_targets:
 - tesseract-robotics main
+console_bridge:
+- '1.0'
 cxx_compiler:
 - vs2019
-pin_run_as_build:
-  boost-cpp:
-    max_pin: x.x.x
+libboost_devel:
+- '1.82'
+pcl:
+- 1.13.1
 target_platform:
 - win-64
 tinyxml2:

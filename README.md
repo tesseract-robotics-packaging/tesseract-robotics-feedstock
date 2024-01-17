@@ -1,11 +1,11 @@
-About tesseract-robotics
-========================
+About tesseract-robotics-feedstock
+==================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/tesseract-robotics/tesseract-robotics-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/tesseract-robotics/tesseract
 
 Package license: Apache-2.0 AND BSD-3-Clause AND BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/tesseract-robotics/tesseract-robotics-feedstock/blob/master/LICENSE.txt)
 
 Summary: Motion Planning Environment
 
@@ -43,16 +43,41 @@ conda config --add channels tesseract-robotics
 conda config --set channel_priority strict
 ```
 
-Once the `tesseract-robotics` channel has been enabled, `tesseract-robotics-collision, tesseract-robotics-common, tesseract-robotics-environment, tesseract-robotics-geometry, tesseract-robotics-kinematics, tesseract-robotics-scene-graph, tesseract-robotics-srdf, tesseract-robotics-state-solver, tesseract-robotics-support, tesseract-robotics-urdf, tesseract-robotics-visualization` can be installed with:
+Once the `tesseract-robotics` channel has been enabled, `tesseract-robotics-collision, tesseract-robotics-common, tesseract-robotics-environment, tesseract-robotics-geometry, tesseract-robotics-kinematics, tesseract-robotics-scene-graph, tesseract-robotics-srdf, tesseract-robotics-state-solver, tesseract-robotics-support, tesseract-robotics-urdf, tesseract-robotics-visualization` can be installed with `conda`:
 
 ```
 conda install tesseract-robotics-collision tesseract-robotics-common tesseract-robotics-environment tesseract-robotics-geometry tesseract-robotics-kinematics tesseract-robotics-scene-graph tesseract-robotics-srdf tesseract-robotics-state-solver tesseract-robotics-support tesseract-robotics-urdf tesseract-robotics-visualization
 ```
 
-It is possible to list all of the versions of `tesseract-robotics-collision` available on your platform with:
+or with `mamba`:
+
+```
+mamba install tesseract-robotics-collision tesseract-robotics-common tesseract-robotics-environment tesseract-robotics-geometry tesseract-robotics-kinematics tesseract-robotics-scene-graph tesseract-robotics-srdf tesseract-robotics-state-solver tesseract-robotics-support tesseract-robotics-urdf tesseract-robotics-visualization
+```
+
+It is possible to list all of the versions of `tesseract-robotics-collision` available on your platform with `conda`:
 
 ```
 conda search tesseract-robotics-collision --channel tesseract-robotics
+```
+
+or with `mamba`:
+
+```
+mamba search tesseract-robotics-collision --channel tesseract-robotics
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search tesseract-robotics-collision --channel tesseract-robotics
+
+# List packages depending on `tesseract-robotics-collision`:
+mamba repoquery whoneeds tesseract-robotics-collision --channel tesseract-robotics
+
+# List dependencies of `tesseract-robotics-collision`:
+mamba repoquery depends tesseract-robotics-collision --channel tesseract-robotics
 ```
 
 
