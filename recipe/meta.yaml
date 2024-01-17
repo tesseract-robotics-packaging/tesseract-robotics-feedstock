@@ -1,24 +1,26 @@
-{% set version = "0.8.3" %}
+{% set version = "0.21.5" %}
 
 package:
   name: tesseract-robotics
   version: {{ version }}
 
 source:
-  - git_url: https://github.com/tesseract-robotics/tesseract.git
-    git_rev: {{ version }}
-    git_depth: 50
-    folder: src
-    patches:
-      - tesseract_disable_examples.patch
+  - url: https://github.com/tesseract-robotics/tesseract/archive/refs/tags/{{ version }}.tar.gz
+    sha256: d19c1f496cfd8faea1844e881104406b98f11415b5d025f65a0feea07db041a5
+    folder: src/tesseract  
 
 build:
-  number: 4
+  number: 0
 
 outputs:
   - name: tesseract-robotics-common
-    script: build_common.sh # [unix]
-    script: bld_common.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_common
+        - SUBPKG_BUILD_DIR=build/tesseract_common
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -33,13 +35,13 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
+        - ros-industrial-cmake-boilerplate
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
     test:
@@ -52,8 +54,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_common.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_common\tesseract_common-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-geometry
-    script: build_geometry.sh # [unix]
-    script: bld_geometry.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_geometry
+        - SUBPKG_BUILD_DIR=build/tesseract_geometry
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -69,21 +76,23 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
         - assimp
         - octomap
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-common
+        - tesseract-robotics-support
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - assimp
         - octomap
         - tesseract-robotics-common
+        - tesseract-robotics-support
     test:
         commands:
           - test -f ${PREFIX}/include/tesseract_geometry/geometry.h  # [unix]
@@ -91,8 +100,13 @@ outputs:
           - if not exist %LIBRARY_PREFIX%\include\tesseract_geometry\geometry.h (exit 1)  # [win]
           - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_geometry\tesseract_geometry-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-scene-graph
-    script: build_scene.sh # [unix]
-    script: bld_scene.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_scene_graph
+        - SUBPKG_BUILD_DIR=build/tesseract_scene_graph
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -108,16 +122,16 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-common
         - tesseract-robotics-geometry
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
@@ -133,8 +147,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_scene_graph.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_scene_graph\tesseract_scene_graph-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-srdf
-    script: build_srdf.sh # [unix]
-    script: bld_srdf.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_srdf
+        - SUBPKG_BUILD_DIR=build/tesseract_srdf
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -150,15 +169,15 @@ outputs:
         - pkg-config
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - tesseract-robotics-common
@@ -173,8 +192,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_srdf.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_srdf\tesseract_srdf-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-state-solver
-    script: build_state_solver.sh # [unix]
-    script: bld_state_solver.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_state_solver
+        - SUBPKG_BUILD_DIR=build/tesseract_state_solver
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -190,16 +214,16 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
@@ -216,8 +240,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_state_solver_ofkt.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_state_solver\tesseract_state_solver-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-kinematics
-    script: build_kinematics.sh # [unix]
-    script: bld_kinematics.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_kinematics
+        - SUBPKG_BUILD_DIR=build/tesseract_kinematics
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -233,10 +262,11 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
+        - ros-industrial-cmake-boilerplate
         - opw-kinematics
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
@@ -244,7 +274,6 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
@@ -268,8 +297,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_kinematics_ur.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_kinematics\tesseract_kinematics-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-support
-    script: build_support.sh # [unix]
-    script: bld_support.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_support
+        - SUBPKG_BUILD_DIR=build/tesseract_support
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -285,25 +319,21 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
         - opw-kinematics
-        - tesseract-robotics-scene-graph
-        - tesseract-robotics-geometry
-        - tesseract-robotics-state-solver
+        - ros-industrial-cmake-boilerplate
+        - tesseract-robotics-common
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - orocos-kdl
         - opw-kinematics
         - tesseract-robotics-common
-        - tesseract-robotics-scene-graph
-        - tesseract-robotics-state-solver
     test:
       commands:
         - test -f ${PREFIX}/share/tesseract_support/urdf/abb_irb2400.srdf  # [unix]
@@ -311,8 +341,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\share\tesseract_support\urdf\abb_irb2400.srdf (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_support\tesseract_support-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-collision
-    script: build_collision.sh # [unix]
-    script: bld_collision.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_collision
+        - SUBPKG_BUILD_DIR=build/tesseract_collision
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -328,11 +363,12 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
         - bullet-cpp
         - fcl
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-common
         - tesseract-robotics-geometry
         - tesseract-robotics-support
@@ -340,7 +376,6 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - bullet-cpp
@@ -363,8 +398,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_collision_fcl.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_collision\tesseract_collision-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-urdf
-    script: build_urdf.sh # [unix]
-    script: bld_urdf.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_urdf
+        - SUBPKG_BUILD_DIR=build/tesseract_urdf
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -382,10 +422,11 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
         - tinyxml2
         - yaml-cpp
         - pcl
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-common
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
@@ -393,7 +434,6 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tinyxml2
         - yaml-cpp
         - pcl
@@ -411,8 +451,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_urdf.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_urdf\tesseract_urdf-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-environment
-    script: build_environment.sh # [unix]
-    script: bld_environment.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_environment
+        - SUBPKG_BUILD_DIR=build/tesseract_environment
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -429,7 +474,8 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-collision
         - tesseract-robotics-geometry
         - tesseract-robotics-kinematics
@@ -441,7 +487,6 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tesseract-robotics-collision
         - tesseract-robotics-geometry
         - tesseract-robotics-kinematics
@@ -460,8 +505,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_environment.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_environment\tesseract_environment-config.cmake (exit 1)  # [win]
   - name: tesseract-robotics-visualization
-    script: build_visualization.sh # [unix]
-    script: bld_visualization.bat # [win]
+    build:
+      script_env:
+        - SUBPKG_SRC_DIR=src/tesseract/tesseract_visualization
+        - SUBPKG_BUILD_DIR=build/tesseract_visualization
+    script: build_pkg.sh # [unix]
+    script: bld_pkg.bat # [win]
+    version: {{ tesseract_version }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -478,7 +528,8 @@ outputs:
       host:
         - eigen
         - console_bridge
-        - boost-cpp
+        - libboost-devel
+        - ros-industrial-cmake-boilerplate
         - tesseract-robotics-collision
         - tesseract-robotics-common
         - tesseract-robotics-environment
@@ -487,7 +538,6 @@ outputs:
       run:
         - eigen
         - console_bridge
-        - boost-cpp
         - tesseract-robotics-collision
         - tesseract-robotics-common
         - tesseract-robotics-environment
@@ -502,15 +552,16 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\lib\tesseract_visualization.lib (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\tesseract_visualization.dll (exit 1)  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\cmake\tesseract_visualization\tesseract_visualization-config.cmake (exit 1)  # [win]
+        
 about:
   home: https://github.com/tesseract-robotics/tesseract
   summary: Motion Planning Environment
   license: Apache-2.0 AND BSD-3-Clause AND BSD-2-Clause
   license_file: 
-    - src/LICENSE
-    - src/LICENSE.Apache-2.0
-    - src/LICENSE.BSD-3-Clause
-    - src/LICENSE.BSD-2-Clause
+    - src/tesseract/LICENSE
+    - src/tesseract/LICENSE.Apache-2.0
+    - src/tesseract/LICENSE.BSD-3-Clause
+    - src/tesseract/LICENSE.BSD-2-Clause
 
 extra:
   recipe-maintainers:
