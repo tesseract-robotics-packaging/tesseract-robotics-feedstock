@@ -3,6 +3,6 @@ c_compiler:
 cxx_compiler:
 - vs2019 # [win]
 channel_sources:
-  - tesseract-robotics,conda-forge,defaults
+  - tesseract-robotics,conda-forge
 channel_targets:
   - tesseract-robotics main
