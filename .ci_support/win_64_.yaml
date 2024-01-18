@@ -5,9 +5,9 @@ bullet_cpp:
 c_compiler:
 - vs2019
 channel_sources:
-- tesseract-robotics,conda-forge
+- tesseract-robotics/label/dev_indv,conda-forge
 channel_targets:
-- tesseract-robotics main
+- tesseract-robotics dev_indv
 console_bridge:
 - '1.0'
 cxx_compiler:

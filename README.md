@@ -36,14 +36,14 @@ Current release info
 Installing tesseract-robotics
 =============================
 
-Installing `tesseract-robotics` from the `tesseract-robotics` channel can be achieved by adding `tesseract-robotics` to your channels with:
+Installing `tesseract-robotics` from the `tesseract-robotics/label/dev_indv` channel can be achieved by adding `tesseract-robotics/label/dev_indv` to your channels with:
 
 ```
-conda config --add channels tesseract-robotics
+conda config --add channels tesseract-robotics/label/dev_indv
 conda config --set channel_priority strict
 ```
 
-Once the `tesseract-robotics` channel has been enabled, `tesseract-robotics-collision, tesseract-robotics-common, tesseract-robotics-environment, tesseract-robotics-geometry, tesseract-robotics-kinematics, tesseract-robotics-scene-graph, tesseract-robotics-srdf, tesseract-robotics-state-solver, tesseract-robotics-support, tesseract-robotics-urdf, tesseract-robotics-visualization` can be installed with `conda`:
+Once the `tesseract-robotics/label/dev_indv` channel has been enabled, `tesseract-robotics-collision, tesseract-robotics-common, tesseract-robotics-environment, tesseract-robotics-geometry, tesseract-robotics-kinematics, tesseract-robotics-scene-graph, tesseract-robotics-srdf, tesseract-robotics-state-solver, tesseract-robotics-support, tesseract-robotics-urdf, tesseract-robotics-visualization` can be installed with `conda`:
 
 ```
 conda install tesseract-robotics-collision tesseract-robotics-common tesseract-robotics-environment tesseract-robotics-geometry tesseract-robotics-kinematics tesseract-robotics-scene-graph tesseract-robotics-srdf tesseract-robotics-state-solver tesseract-robotics-support tesseract-robotics-urdf tesseract-robotics-visualization
@@ -58,26 +58,26 @@ mamba install tesseract-robotics-collision tesseract-robotics-common tesseract-r
 It is possible to list all of the versions of `tesseract-robotics-collision` available on your platform with `conda`:
 
 ```
-conda search tesseract-robotics-collision --channel tesseract-robotics
+conda search tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
 ```
 
 or with `mamba`:
 
 ```
-mamba search tesseract-robotics-collision --channel tesseract-robotics
+mamba search tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search tesseract-robotics-collision --channel tesseract-robotics
+mamba repoquery search tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
 
 # List packages depending on `tesseract-robotics-collision`:
-mamba repoquery whoneeds tesseract-robotics-collision --channel tesseract-robotics
+mamba repoquery whoneeds tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
 
 # List dependencies of `tesseract-robotics-collision`:
-mamba repoquery depends tesseract-robotics-collision --channel tesseract-robotics
+mamba repoquery depends tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
 ```
 
 
