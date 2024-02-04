@@ -10,7 +10,7 @@ source:
     folder: src/tesseract  
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: tesseract-robotics-common
