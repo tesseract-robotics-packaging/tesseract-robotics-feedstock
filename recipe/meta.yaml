@@ -10,7 +10,7 @@ source:
     folder: src/tesseract  
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: tesseract-robotics-common
@@ -39,11 +39,15 @@ outputs:
         - tinyxml2
         - yaml-cpp
         - ros-industrial-cmake-boilerplate
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
         - tinyxml2
         - yaml-cpp
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_common/macros.h  # [unix]
@@ -84,6 +88,8 @@ outputs:
         - ros-industrial-cmake-boilerplate
         - tesseract-robotics-common
         - tesseract-robotics-support
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -93,6 +99,8 @@ outputs:
         - octomap
         - tesseract-robotics-common
         - tesseract-robotics-support
+        - python
+        - numpy
     test:
         commands:
           - test -f ${PREFIX}/include/tesseract_geometry/geometry.h  # [unix]
@@ -129,6 +137,8 @@ outputs:
         - ros-industrial-cmake-boilerplate
         - tesseract-robotics-common
         - tesseract-robotics-geometry
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -137,6 +147,8 @@ outputs:
         - orocos-kdl
         - tesseract-robotics-common
         - tesseract-robotics-geometry
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_scene_graph/graph.h  # [unix]
@@ -175,6 +187,8 @@ outputs:
         - ros-industrial-cmake-boilerplate
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -182,6 +196,8 @@ outputs:
         - yaml-cpp
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_srdf/srdf_model.h  # [unix]
@@ -221,6 +237,8 @@ outputs:
         - ros-industrial-cmake-boilerplate
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -229,6 +247,8 @@ outputs:
         - orocos-kdl
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_state_solver/state_solver.h  # [unix]
@@ -271,6 +291,8 @@ outputs:
         - tesseract-robotics-scene-graph
         - tesseract-robotics-geometry
         - tesseract-robotics-state-solver
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -281,6 +303,8 @@ outputs:
         - tesseract-robotics-common
         - tesseract-robotics-scene-graph
         - tesseract-robotics-state-solver
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_kinematics/core/forward_kinematics.h  # [unix]
@@ -326,6 +350,8 @@ outputs:
         - opw-kinematics
         - ros-industrial-cmake-boilerplate
         - tesseract-robotics-common
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -334,6 +360,8 @@ outputs:
         - orocos-kdl
         - opw-kinematics
         - tesseract-robotics-common
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/share/tesseract_support/urdf/abb_irb2400.srdf  # [unix]
@@ -373,6 +401,8 @@ outputs:
         - tesseract-robotics-geometry
         - tesseract-robotics-support
         - tesseract-robotics-scene-graph
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -384,6 +414,8 @@ outputs:
         - tesseract-robotics-geometry
         - tesseract-robotics-support
         - tesseract-robotics-scene-graph
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_collision/core/common.h  # [unix]
@@ -431,6 +463,8 @@ outputs:
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
         - tesseract-robotics-scene-graph
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -441,6 +475,8 @@ outputs:
         - tesseract-robotics-geometry
         - tesseract-robotics-collision
         - tesseract-robotics-scene-graph
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_urdf/urdf_parser.h  # [unix]
@@ -484,6 +520,8 @@ outputs:
         - tesseract-robotics-common
         - tesseract-robotics-urdf
         - tesseract-robotics-srdf
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -495,6 +533,8 @@ outputs:
         - tesseract-robotics-common
         - tesseract-robotics-urdf
         - tesseract-robotics-srdf
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_environment/environment.h  # [unix]
@@ -535,6 +575,8 @@ outputs:
         - tesseract-robotics-environment
         - tesseract-robotics-scene-graph
         - tesseract-robotics-state-solver
+        - python
+        - numpy
       run:
         - eigen
         - console_bridge
@@ -543,6 +585,8 @@ outputs:
         - tesseract-robotics-environment
         - tesseract-robotics-scene-graph
         - tesseract-robotics-state-solver
+        - python
+        - numpy
     test:
       commands:
         - test -f ${PREFIX}/include/tesseract_visualization/visualization.h  # [unix]

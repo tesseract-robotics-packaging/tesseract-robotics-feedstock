@@ -21,21 +21,54 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - CONFIG: linux_64_
-            SHORT_CONFIG: linux_64_
+          - CONFIG: linux_64_numpy1.22python3.10.____cpython
+            SHORT_CONFIG: linux_64_numpy1.22python3.10.____cpython
             UPLOAD_PACKAGES: True
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-          - CONFIG: win_64_
-            SHORT_CONFIG: win_64_
+          - CONFIG: linux_64_numpy1.22python3.8.____cpython
+            SHORT_CONFIG: linux_64_numpy1.22python3.8.____cpython
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+          - CONFIG: linux_64_numpy1.22python3.9.____cpython
+            SHORT_CONFIG: linux_64_numpy1.22python3.9.____cpython
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+          - CONFIG: linux_64_numpy1.23python3.11.____cpython
+            SHORT_CONFIG: linux_64_numpy1.23python3.11.____cpython
+            UPLOAD_PACKAGES: True
+            os: ubuntu
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+          - CONFIG: win_64_numpy1.22python3.10.____cpython
+            SHORT_CONFIG: win_64_numpy1.22python3.10.____cpython
+            UPLOAD_PACKAGES: True
+            os: windows
+            runs_on: ['windows-latest']
+          - CONFIG: win_64_numpy1.22python3.8.____cpython
+            SHORT_CONFIG: win_64_numpy1.22python3.8.____cpython
+            UPLOAD_PACKAGES: True
+            os: windows
+            runs_on: ['windows-latest']
+          - CONFIG: win_64_numpy1.22python3.9.____cpython
+            SHORT_CONFIG: win_64_numpy1.22python3.9.____cpython
+            UPLOAD_PACKAGES: True
+            os: windows
+            runs_on: ['windows-latest']
+          - CONFIG: win_64_numpy1.23python3.11.____cpython
+            SHORT_CONFIG: win_64_numpy1.23python3.11.____cpython
             UPLOAD_PACKAGES: True
             os: windows
             runs_on: ['windows-latest']
     steps:
 
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Build on Linux
       if: matrix.os == 'ubuntu'
