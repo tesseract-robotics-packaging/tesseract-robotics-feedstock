@@ -1,8 +1,9 @@
 @echo off
 
-rmdir /s /q src
+if exist src rmdir /s /q src
 mkdir src
-tar xf source.tar.gz --strip-components=1 -C src
+echo */ci/* > tar_excludes.txt
+tar xf source.tar.gz --strip-components=1 -C src -X tar_excludes.txt
 
 cmake -GNinja ^
   -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^

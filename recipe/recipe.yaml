@@ -19,27 +19,69 @@ requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
+    - benchmark
     - gtest
     - gmock
     - cmake
-    - if: win
-      then: ninja
+    - ninja
+    - pkg-config
+    - lcov
     - if: linux
-      then: make
-    - ros-industrial-cmake-boilerplate
-    - if: linux
-      then: lcov
+      then:
+        - ${{ cdt('mesa-libgl-devel') }}
+        - ${{ cdt('mesa-dri-drivers') }}
   host:
-    - eigen
-    - eigen-abi-devel
-    - console_bridge
+    - ros-industrial-cmake-boilerplate
+    - boost-plugin-loader
+    - opw-kinematics
     - libboost-devel
-    - tinyxml2
-    - yaml-cpp
     - cereal
-  run:
-    - eigen
+    - eigen-abi-devel
+    - tinyxml2
     - console_bridge
+    - assimp
+    - urdfdom
+    - fcl
+    - octomap 
+    - orocos-kdl 
+    - pcl
+    - gtest
+    - gmock
+    - pkg-config 
+    - xz
+    - flann
+    - jsoncpp
+    - yaml-cpp
+    - bullet-cpp
+    - blas
+    - if: unix
+      then:
+        - xorg-libx11
+        - xorg-libxext
+  run:
+    - libboost-devel
+    - cereal
+    - eigen
+    - tinyxml2
+    - console_bridge
+    - assimp
+    - urdfdom
+    - fcl
+    - octomap 
+    - orocos-kdl 
+    - pcl
+    - gtest
+    - gmock
+    - xz
+    - jsoncpp
+    - taskflow 
+    - yaml-cpp
+    - bullet-cpp
+    - blas
+    - if: unix
+      then:
+        - xorg-libx11
+        - xorg-libxext
   run_exports:
     - ${{ pin_subpackage('tesseract-robotics', upper_bound='x.x') }}
 
@@ -47,10 +89,10 @@ about:
   summary: Motion Planning Environment
   license: Apache-2.0 AND BSD-3-Clause AND BSD-2-Clause
   license_file:
-    - src/tesseract/LICENSE
-    - src/tesseract/LICENSE.Apache-2.0
-    - src/tesseract/LICENSE.BSD-3-Clause
-    - src/tesseract/LICENSE.BSD-2-Clause
+    - src/LICENSE
+    - src/LICENSE.Apache-2.0
+    - src/LICENSE.BSD-3-Clause
+    - src/LICENSE.BSD-2-Clause
   homepage: https://github.com/tesseract-robotics/tesseract
 
 extra:
