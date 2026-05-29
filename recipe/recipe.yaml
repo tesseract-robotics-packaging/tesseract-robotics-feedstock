@@ -59,7 +59,6 @@ requirements:
         - xorg-libx11
         - xorg-libxext
   run:
-    - libboost-devel
     - cereal
     - eigen
     - tinyxml2
@@ -70,11 +69,7 @@ requirements:
     - octomap 
     - orocos-kdl 
     - pcl
-    - gtest
-    - gmock
     - xz
-    - jsoncpp
-    - taskflow 
     - yaml-cpp
     - bullet-cpp
     - blas
@@ -84,6 +79,28 @@ requirements:
         - xorg-libxext
   run_exports:
     - ${{ pin_subpackage('tesseract-robotics', upper_bound='x.x') }}
+
+tests:
+  - package_contents:
+      include:
+        - tesseract/collision/common.h
+        - tesseract/common/fwd.h
+        - tesseract/environment/fwd.h
+        - tesseract/geometry/fwd.h
+        - tesseract/kinematics/fwd.h
+        - tesseract/scene_graph/fwd.h
+        - tesseract/srdf/fwd.h
+        - tesseract/state_solver/fwd.h
+        - tesseract/urdf/urdf_parser.h
+        - tesseract/visualization/fwd.h
+      lib:
+        - tesseract_collision
+        - tesseract_common
+        - tesseract_environment
+        - tesseract_scene_graph
+        - tesseract_srdf
+        - tesseract_urdf
+        - tesseract_visualization
 
 about:
   summary: Motion Planning Environment
