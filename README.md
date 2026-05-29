@@ -13,7 +13,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/tesseract-robotics/tesseract-robotics-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/tesseract-robotics/tesseract-robotics-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
 </table>
 
 Current release info
@@ -21,63 +28,53 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--collision-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-collision) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-collision.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-collision) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-collision.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-collision) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-collision.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-collision) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--common-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-common) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-common.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-common) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-common.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-common) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-common.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-common) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--environment-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-environment) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-environment.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-environment) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-environment.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-environment) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-environment.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-environment) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--geometry-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-geometry) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-geometry.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-geometry) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-geometry.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-geometry) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-geometry.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-geometry) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--kinematics-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-kinematics) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-kinematics.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-kinematics) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-kinematics.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-kinematics) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-kinematics.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-kinematics) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--scene--graph-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-scene-graph) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-scene-graph.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-scene-graph) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-scene-graph.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-scene-graph) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-scene-graph.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-scene-graph) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--srdf-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-srdf) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-srdf.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-srdf) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-srdf.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-srdf) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-srdf.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-srdf) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--state--solver-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-state-solver) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-state-solver.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-state-solver) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-state-solver.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-state-solver) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-state-solver.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-state-solver) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--support-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-support) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-support.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-support) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-support.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-support) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-support.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-support) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--urdf-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-urdf) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-urdf.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-urdf) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-urdf.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-urdf) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-urdf.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-urdf) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics--visualization-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-visualization) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics-visualization.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-visualization) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics-visualization.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-visualization) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics-visualization.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics-visualization) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-tesseract--robotics-green.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics) | [![Conda Downloads](https://img.shields.io/conda/dn/tesseract-robotics/tesseract-robotics.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics) | [![Conda Version](https://img.shields.io/conda/vn/tesseract-robotics/tesseract-robotics.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics) | [![Conda Platforms](https://img.shields.io/conda/pn/tesseract-robotics/tesseract-robotics.svg)](https://anaconda.org/tesseract-robotics/tesseract-robotics) |
 
 Installing tesseract-robotics
 =============================
 
-Installing `tesseract-robotics` from the `tesseract-robotics/label/dev_indv` channel can be achieved by adding `tesseract-robotics/label/dev_indv` to your channels with:
+Installing `tesseract-robotics` from the `tesseract-robotics/label/` channel can be achieved by adding `tesseract-robotics/label/` to your channels with:
 
 ```
-conda config --add channels tesseract-robotics/label/dev_indv
+conda config --add channels tesseract-robotics/label/
 conda config --set channel_priority strict
 ```
 
-Once the `tesseract-robotics/label/dev_indv` channel has been enabled, `tesseract-robotics-collision, tesseract-robotics-common, tesseract-robotics-environment, tesseract-robotics-geometry, tesseract-robotics-kinematics, tesseract-robotics-scene-graph, tesseract-robotics-srdf, tesseract-robotics-state-solver, tesseract-robotics-support, tesseract-robotics-urdf, tesseract-robotics-visualization` can be installed with `conda`:
+Once the `tesseract-robotics/label/` channel has been enabled, `tesseract-robotics` can be installed with `conda`:
 
 ```
-conda install tesseract-robotics-collision tesseract-robotics-common tesseract-robotics-environment tesseract-robotics-geometry tesseract-robotics-kinematics tesseract-robotics-scene-graph tesseract-robotics-srdf tesseract-robotics-state-solver tesseract-robotics-support tesseract-robotics-urdf tesseract-robotics-visualization
-```
-
-or with `mamba`:
-
-```
-mamba install tesseract-robotics-collision tesseract-robotics-common tesseract-robotics-environment tesseract-robotics-geometry tesseract-robotics-kinematics tesseract-robotics-scene-graph tesseract-robotics-srdf tesseract-robotics-state-solver tesseract-robotics-support tesseract-robotics-urdf tesseract-robotics-visualization
-```
-
-It is possible to list all of the versions of `tesseract-robotics-collision` available on your platform with `conda`:
-
-```
-conda search tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
+conda install tesseract-robotics
 ```
 
 or with `mamba`:
 
 ```
-mamba search tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
+mamba install tesseract-robotics
+```
+
+It is possible to list all of the versions of `tesseract-robotics` available on your platform with `conda`:
+
+```
+conda search tesseract-robotics --channel tesseract-robotics/label/
+```
+
+or with `mamba`:
+
+```
+mamba search tesseract-robotics --channel tesseract-robotics/label/
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
+mamba repoquery search tesseract-robotics --channel tesseract-robotics/label/
 
-# List packages depending on `tesseract-robotics-collision`:
-mamba repoquery whoneeds tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
+# List packages depending on `tesseract-robotics`:
+mamba repoquery whoneeds tesseract-robotics --channel tesseract-robotics/label/
 
-# List dependencies of `tesseract-robotics-collision`:
-mamba repoquery depends tesseract-robotics-collision --channel tesseract-robotics/label/dev_indv
+# List dependencies of `tesseract-robotics`:
+mamba repoquery depends tesseract-robotics --channel tesseract-robotics/label/
 ```
 
 
@@ -95,7 +92,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `tesseract-robotics` channel.
 Note that all branches in the tesseract-robotics/tesseract-robotics-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
