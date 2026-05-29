@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  version: "0.35.0"
+
+package:
+  name: tesseract-robotics
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/tesseract-robotics/tesseract/archive/refs/tags/${{ version }}.tar.gz
+    sha256: 98935411bcf2261fc3e8854c7528dd0cdf1a466f7ae131d630699e494eb9d4c9
+    file_name: source.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - gtest
+    - gmock
+    - cmake
+    - if: win
+      then: ninja
+    - if: linux
+      then: make
+    - ros-industrial-cmake-boilerplate
+    - if: linux
+      then: lcov
+  host:
+    - eigen
+    - eigen-abi-devel
+    - console_bridge
+    - libboost-devel
+    - tinyxml2
+    - yaml-cpp
+    - cereal
+  run:
+    - eigen
+    - console_bridge
+  run_exports:
+    - ${{ pin_subpackage('tesseract-robotics', upper_bound='x.x') }}
+
+about:
+  summary: Motion Planning Environment
+  license: Apache-2.0 AND BSD-3-Clause AND BSD-2-Clause
+  license_file:
+    - src/tesseract/LICENSE
+    - src/tesseract/LICENSE.Apache-2.0
+    - src/tesseract/LICENSE.BSD-3-Clause
+    - src/tesseract/LICENSE.BSD-2-Clause
+  homepage: https://github.com/tesseract-robotics/tesseract
+
+extra:
+  recipe-maintainers:
+    - johnwason
+
