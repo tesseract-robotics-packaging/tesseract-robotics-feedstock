@@ -65,7 +65,7 @@ jobs:
             SHORT_CONFIG: win_64_
             UPLOAD_PACKAGES: True
             os: windows
-            runs_on: ['windows-latest']
+            runs_on: ['windows-2022']
             tools_install_dir: D:\Miniforge
             build_workspace_dir: D:\\bld\\
             docker_run_args: 
