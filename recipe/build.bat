@@ -6,9 +6,7 @@ echo */ci/*> tar_excludes.txt
 tar xf source.tar.gz --strip-components=1 -C src -X tar_excludes.txt
 
 cmake -GNinja ^
-  -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
-  -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
-  -DCMAKE_BUILD_TYPE:STRING=Release ^
+  %CMAKE_ARGS% ^
   -DBUILD_SHARED_LIBS=ON ^
   -DUSE_MSVC_RUNTIME_LIBRARY_DLL=ON ^
   -DTESSERACT_ENABLE_TESTING=OFF ^
