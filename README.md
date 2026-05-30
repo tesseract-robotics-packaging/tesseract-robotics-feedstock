@@ -33,14 +33,14 @@ Current release info
 Installing tesseract-robotics
 =============================
 
-Installing `tesseract-robotics` from the `tesseract-robotics/label/` channel can be achieved by adding `tesseract-robotics/label/` to your channels with:
+Installing `tesseract-robotics` from the `tesseract-robotics` channel can be achieved by adding `tesseract-robotics` to your channels with:
 
 ```
-conda config --add channels tesseract-robotics/label/
+conda config --add channels tesseract-robotics
 conda config --set channel_priority strict
 ```
 
-Once the `tesseract-robotics/label/` channel has been enabled, `tesseract-robotics` can be installed with `conda`:
+Once the `tesseract-robotics` channel has been enabled, `tesseract-robotics` can be installed with `conda`:
 
 ```
 conda install tesseract-robotics
@@ -55,26 +55,26 @@ mamba install tesseract-robotics
 It is possible to list all of the versions of `tesseract-robotics` available on your platform with `conda`:
 
 ```
-conda search tesseract-robotics --channel tesseract-robotics/label/
+conda search tesseract-robotics --channel tesseract-robotics
 ```
 
 or with `mamba`:
 
 ```
-mamba search tesseract-robotics --channel tesseract-robotics/label/
+mamba search tesseract-robotics --channel tesseract-robotics
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search tesseract-robotics --channel tesseract-robotics/label/
+mamba repoquery search tesseract-robotics --channel tesseract-robotics
 
 # List packages depending on `tesseract-robotics`:
-mamba repoquery whoneeds tesseract-robotics --channel tesseract-robotics/label/
+mamba repoquery whoneeds tesseract-robotics --channel tesseract-robotics
 
 # List dependencies of `tesseract-robotics`:
-mamba repoquery depends tesseract-robotics --channel tesseract-robotics/label/
+mamba repoquery depends tesseract-robotics --channel tesseract-robotics
 ```
 
 
@@ -105,5 +105,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@Levi-Armstrong](https://github.com/Levi-Armstrong/)
 * [@johnwason](https://github.com/johnwason/)
+* [@traversaro](https://github.com/traversaro/)
 

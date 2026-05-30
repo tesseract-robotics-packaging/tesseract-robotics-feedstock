@@ -11,7 +11,7 @@ cdt_name:
 channel_sources:
 - tesseract-robotics,conda-forge
 channel_targets:
-- tesseract-robotics
+- tesseract-robotics main
 console_bridge:
 - '1.0'
 cxx_compiler:
